@@ -16,7 +16,7 @@ import {
   faStore,
   faUser,
   faBox,
-} from "@fortawesome/free-regular-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
 
 const Tabs = () => {
   return (

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faLocationPin,
   faCartShopping,
-} from "@fortawesome/free-regular-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
 import Styles from "../grocerystyle";
 
 const LocationAndCart = () => {

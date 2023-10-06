@@ -6,14 +6,13 @@ const Stack = createNativeStackNavigator();
 import Tabs from "./navigation/tab";
 import Groceries from "./screen/groceries/groceries";
 import { BackButton } from "./screen/groceries/components/BackButton";
-BackButton;
 const App = () => {
   return (
     <NavigationContainer>
-      {/* <Tabs /> */}
-      <Stack.Navigator>
+      <Tabs />
+      {/* <Stack.Navigator>
         <Stack.Screen name="Groceries" component={Groceries} />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
     </NavigationContainer>
   );
 };

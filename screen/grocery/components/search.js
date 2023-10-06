@@ -1,9 +1,6 @@
 import { View, TextInput } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faFilter,
-  faMagnifyingGlass,
-} from "@fortawesome/free-regular-svg-icons";
+import { faFilter, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Styles from "../grocerystyle";
 
 const SearchView = () => {

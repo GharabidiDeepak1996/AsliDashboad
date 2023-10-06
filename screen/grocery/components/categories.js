@@ -9,7 +9,7 @@ import {
   faBaby,
   faCookieBite,
   faMartiniGlassCitrus,
-} from "@fortawesome/free-regular-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
 import { Icon } from "@iconify/react";
 import CategoriesItem from "./categoriesItem";
 import Styles from "../grocerystyle";
