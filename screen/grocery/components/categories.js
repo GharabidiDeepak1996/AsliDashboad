@@ -24,7 +24,7 @@ const Categories = () => {
         <Text
           style={Styles.categoriesViewMore}
           onPress={() => {
-            navigation.navigate("AllCategories");
+            navigation.navigate("AllCategoriesScreen");
           }}
         >
           View More

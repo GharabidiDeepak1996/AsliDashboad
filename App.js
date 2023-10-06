@@ -4,15 +4,22 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 //https://jaymanyoo.medium.com/combine-bottom-tab-navigator-with-stack-navigator-in-react-native-2020-58804b4afded
 import Tabs from "./navigation/tab";
-import Groceries from "./screen/groceries/groceries";
-import { BackButton } from "./screen/groceries/components/BackButton";
+import { AllCategoriesScreen } from "./screen";
 const App = () => {
   return (
     <NavigationContainer>
-      <Tabs />
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Groceries" component={Groceries} />
-      </Stack.Navigator> */}
+      <Stack.Navigator
+        initialRouteName="FeaturesTabNavigation"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen
+          name="AllCategoriesScreen"
+          component={AllCategoriesScreen}
+        />
+        <Stack.Screen name="FeaturesTabNavigation" component={Tabs} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

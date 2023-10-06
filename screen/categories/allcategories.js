@@ -9,4 +9,4 @@ const AllCategoriesScreen = () => {
   );
 };
 
-export default AllCategoriesScreen();
+export default AllCategoriesScreen;
