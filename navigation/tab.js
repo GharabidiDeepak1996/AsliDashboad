@@ -9,6 +9,7 @@ import {
   CourierScreen,
   AccountScreen,
   AllCategoriesScreen,
+  Groceries,
 } from "../screen";
 import { View, Text } from "react-native";
 
@@ -19,7 +20,9 @@ import {
   faStore,
   faUser,
   faBox,
+  faL,
 } from "@fortawesome/free-solid-svg-icons";
+import { CustomAddToCart } from "../screen/groceries/components/CustomAddToCart";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -125,15 +128,27 @@ const Tabs = () => {
   );
 };
 
-function GroceryStackScreen() {
+function GroceryStackScreen({ navigation, route }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="GroceryScreen" component={GroceryScreen} />
+      <Stack.Screen
+        name="GroceryScreen"
+        component={GroceryScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="AllCategoriesScreen"
         component={AllCategoriesScreen}
         options={{
           headerTitle: "All Categories",
+        }}
+      />
+      <Stack.Screen
+        name="Groceries"
+        component={Groceries}
+        options={{
+          headerTitle: "Groceries",
+          headerRight: () => <CustomAddToCart navigationProps={navigation} />,
         }}
       />
     </Stack.Navigator>

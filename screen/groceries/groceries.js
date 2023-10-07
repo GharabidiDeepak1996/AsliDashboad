@@ -1,5 +1,5 @@
-import React from "react";
-import { SafeAreaView, View, Image, Text } from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView, View, Image, Text, FlatList } from "react-native";
 import { CustomAddToCart } from "./components/CustomAddToCart";
 import { BackButton } from "./components/BackButton";
 import SearchView from "./components/Search";
@@ -8,12 +8,32 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faPlus, faBorderAll, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Groceries = ({ navigation }) => {
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => <BackButton />,
-      headerRight: () => <CustomAddToCart navigationProps={navigation} />,
-    });
-  }, [navigation]);
+  const [dataSource, setDataSource] = useState([]);
+
+  // React.useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerLeft: () => <BackButton />,
+  //     //headerRight: () => <CustomAddToCart navigationProps={navigation} />,
+  //   });
+  // }, [navigation]);
+
+  useState(() => {
+    let items = [
+      {
+        id: 1,
+        src: require("../../assets/groceries/nissinministick.jpg"),
+        text: "Kellogg Crunchy Granola Almonds & Cranberries 460g",
+      },
+      { id: 2, src: faCarrot, text: "Vegetables" },
+      { id: 3, src: faAppleWhole, text: "Fruits" },
+      { id: 4, src: faCow, text: "Milk" },
+      { id: 5, src: faBaby, text: "Baby Care" },
+      { id: 6, src: faCookieBite, text: "Biscuits & Snacks" },
+      { id: 7, src: faMartiniGlassCitrus, text: "Soft Drinks" },
+      { id: 8, src: faWheatAwn, text: "Noodles" },
+    ];
+    setDataSource(items);
+  }, []);
   return (
     <SafeAreaView style={{ flex: 1, padding: 16 }}>
       <View
@@ -35,6 +55,7 @@ const Groceries = ({ navigation }) => {
         />
       </View>
       {/* ListCards */}
+
       <View
         style={{
           width: 165,
@@ -61,7 +82,7 @@ const Groceries = ({ navigation }) => {
               width: "100%",
               alignSelf: "center",
             }}
-            source={require("../../assets/nissinministick.jpg")}
+            source={require("../../")}
           />
         </View>
         <Text style={{ fontWeight: "bold", fontSize: 11, marginVertical: 6 }}>

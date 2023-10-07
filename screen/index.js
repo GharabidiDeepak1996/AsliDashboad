@@ -4,6 +4,7 @@ import FoodScreen from "./food/food";
 import CourierScreen from "./courier/courier";
 import AccountScreen from "./account/account";
 import AllCategoriesScreen from "./categories/allcategories";
+import Groceries from "./groceries/groceries";
 
 export {
   HomeScreen,
@@ -12,4 +13,5 @@ export {
   CourierScreen,
   AccountScreen,
   AllCategoriesScreen,
+  Groceries,
 };
