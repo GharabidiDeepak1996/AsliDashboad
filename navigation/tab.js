@@ -1,4 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+
 import {
   HomeScreen,
   GroceryScreen,
@@ -8,7 +11,7 @@ import {
   AllCategoriesScreen,
 } from "../screen";
 import { View, Text } from "react-native";
-const Tab = createBottomTabNavigator();
+
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faHome,
@@ -17,6 +20,8 @@ import {
   faUser,
   faBox,
 } from "@fortawesome/free-solid-svg-icons";
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const Tabs = () => {
   return (
@@ -69,7 +74,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Grocery"
-        component={GroceryScreen}
+        component={GroceryStackScreen}
         options={{
           headerShown: false,
           tabBarLabel: "Grocery",
@@ -120,4 +125,18 @@ const Tabs = () => {
   );
 };
 
+function GroceryStackScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="GroceryScreen" component={GroceryScreen} />
+      <Stack.Screen
+        name="AllCategoriesScreen"
+        component={AllCategoriesScreen}
+        options={{
+          headerTitle: "All Categories",
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 export default Tabs;

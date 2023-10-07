@@ -14,10 +14,6 @@ const App = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="AllCategoriesScreen"
-          component={AllCategoriesScreen}
-        />
         <Stack.Screen name="FeaturesTabNavigation" component={Tabs} />
       </Stack.Navigator>
     </NavigationContainer>
