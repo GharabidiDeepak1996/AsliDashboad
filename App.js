@@ -12,6 +12,7 @@ import RegisterAsScreen from "./screen/Register/RegisterAsScreen";
 import RegisterAsBuyer from "./screen/Register/RegisterAsBuyer";
 import RegisterAsStore from "./screen/Register/RegisterAsStore";
 import LoginPage from "./screen/Login/LoginPage";
+import CheckOut from "./screen/checkout";
 const App = () => {
   return (
     <NavigationContainer>
@@ -96,6 +97,11 @@ const App = () => {
           }}
         />
 
+        <Stack.Screen
+          name="Checkout"
+          component={CheckOut}
+          options={{ headerShown: true }}
+        />
         <Stack.Screen name="FeaturesTabNavigation" component={Tabs} />
       </Stack.Navigator>
     </NavigationContainer>
