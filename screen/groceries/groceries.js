@@ -118,9 +118,9 @@ const Groceries = ({ navigation }) => {
               flexDirection: "column",
               margin: 4,
             }}
-            onStartShouldSetResponder={() => {
-              navigation.navigate("ItemDetails", { props: item });
-            }}
+            // onStartShouldSetResponder={() => {
+            //   navigation.navigate("ItemDetails", { props: item });
+            // }}
           >
             <View
               style={{
@@ -134,10 +134,13 @@ const Groceries = ({ navigation }) => {
               }}
             >
               {/* Image */}
-              <View
+              <Pressable
                 style={{
                   width: "70%",
                   height: "60%",
+                }}
+                onPress={() => {
+                  navigation.navigate("ItemDetails", { props: item });
                 }}
               >
                 <Image //contain
@@ -149,7 +152,7 @@ const Groceries = ({ navigation }) => {
                   }}
                   source={item.src}
                 />
-              </View>
+              </Pressable>
               <Text
                 style={{ fontWeight: "bold", fontSize: 11, marginVertical: 6 }}
               >

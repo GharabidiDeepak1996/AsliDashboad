@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from "react-native";
 const { height, width } = Dimensions.get("window");
-
+import { CustomButton } from "../../SharedComponents/customButton";
 const ItemDetails = ({ navigation, route }) => {
   console.log("id", route.params.props.id);
   const { id, text } = { ...route.params.props };
@@ -21,6 +21,28 @@ const ItemDetails = ({ navigation, route }) => {
   }, [navigation]);
   const [data, SetData] = useState([1, 1, 1, 1, 1]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  let listData = [
+    { id: 1, productInfoLabel: "Brand", productInfoValue: "Kellogg" },
+    { id: 2, productInfoLabel: "Diet Type", productInfoValue: "Vegetarian" },
+    {
+      id: 3,
+      productInfoLabel: "Flavour",
+      productInfoValue: "Almond, Cranberry",
+    },
+    {
+      id: 4,
+      productInfoLabel: "Age Range (Description)",
+      productInfoValue: "Adult ",
+    },
+    { id: 5, productInfoLabel: "Item Form", productInfoValue: "Puff, Flake" },
+    {
+      id: 6,
+      productInfoLabel: "Speciality",
+      productInfoValue: "No Preservatives",
+    },
+    { id: 7, productInfoLabel: "Net Quantity", productInfoValue: "460.0 gram" },
+  ];
   return (
     <View>
       <ScrollView>
@@ -68,10 +90,12 @@ const ItemDetails = ({ navigation, route }) => {
                     <TouchableOpacity
                       disabled={true}
                       style={{
-                        width: "90%",
-                        height: "90%",
+                        width: "70%",
+                        height: "80%",
                         backgroundColor: "green",
                         borderRadius: 10,
+                        justifyContent: "center",
+                        alignItems: "center",
                       }}
                     ></TouchableOpacity>
                   </View>
@@ -111,11 +135,13 @@ const ItemDetails = ({ navigation, route }) => {
               padding: 16,
             }}
           >
+            {/* Product Info */}
             <View
               style={{
                 backgroundColor: "white",
                 borderRadius: 22,
                 padding: 16,
+                marginBottom: 18,
               }}
             >
               <View
@@ -124,7 +150,11 @@ const ItemDetails = ({ navigation, route }) => {
                   flexDirection: "row",
                 }}
               >
-                <Text style={{ fontWeight: "bold" }}>Product Information</Text>
+                <Text
+                  style={{ fontWeight: "bold", fontSize: 18, marginBottom: 12 }}
+                >
+                  Product Information
+                </Text>
                 <Text>icon</Text>
               </View>
               <View>
@@ -132,49 +162,207 @@ const ItemDetails = ({ navigation, route }) => {
                   style={{
                     justifyContent: "space-between",
                     flexDirection: "row",
+                    marginBottom: 6,
                   }}
                 >
-                  <Text>Brand</Text>
-                  <Text>Kellogg's</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
                 </View>
                 <View
                   style={{
                     justifyContent: "space-between",
                     flexDirection: "row",
+                    marginBottom: 6,
                   }}
                 >
-                  <Text>Diet Type</Text>
-                  <Text>Vegetarian</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
                 </View>
                 <View
                   style={{
                     justifyContent: "space-between",
                     flexDirection: "row",
+                    marginBottom: 6,
                   }}
                 >
-                  <Text>Diet Type</Text>
-                  <Text>Vegetarian</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
                 </View>
                 <View
                   style={{
                     justifyContent: "space-between",
                     flexDirection: "row",
+                    marginBottom: 6,
                   }}
                 >
-                  <Text>Diet Type</Text>
-                  <Text>Vegetarian</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
                 </View>
                 <View
                   style={{
                     justifyContent: "space-between",
                     flexDirection: "row",
+                    marginBottom: 6,
                   }}
                 >
-                  <Text>Diet Type</Text>
-                  <Text>Vegetarian</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
+                </View>
+                <View
+                  style={{
+                    justifyContent: "space-between",
+                    flexDirection: "row",
+                    marginBottom: 6,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Brand
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      fontWeight: "bold",
+                      color: "gray",
+                    }}
+                  >
+                    Kellogg's
+                  </Text>
                 </View>
               </View>
             </View>
+
+            {/* Description */}
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: 22,
+                padding: 16,
+                marginBottom: 18,
+              }}
+            >
+              <View
+                style={{
+                  justifyContent: "space-between",
+                  flexDirection: "row",
+                }}
+              >
+                <Text
+                  style={{ fontWeight: "bold", fontSize: 18, marginBottom: 12 }}
+                >
+                  Description
+                </Text>
+                <Text>icon</Text>
+              </View>
+              <View>
+                <Text
+                  style={{
+                    fontSize: 15,
+                    fontWeight: "bold",
+                    color: "gray",
+                  }}
+                >
+                  Nourishing & Tasty Breakfast Cereal – Start your day with a
+                  nourishing breakfast such as Kellogg’s Crunchy Granola which
+                  is quick to prepare and yummy to eat. It is infused with the
+                  goodness of multigrain and yummy fruits & nuts making for a
+                  nourishing and a tasty meal.
+                </Text>
+              </View>
+            </View>
+
+            <CustomButton
+              activeOpacity={0.5}
+              buttonName="ADD TO CART"
+              onPress={() => {
+                navigation.navigate("RegisterAsScreen");
+              }}
+            />
           </View>
         </View>
       </ScrollView>

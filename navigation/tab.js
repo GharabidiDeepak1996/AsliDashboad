@@ -48,6 +48,7 @@ const Tabs = () => {
         name="Home"
         component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarLabel: "Home",
           tabBarLabelStyle: { fontSize: 12 },
           tabBarIcon: ({ color, size, focused }) => (
