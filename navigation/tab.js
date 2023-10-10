@@ -112,8 +112,10 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Account"
-        component={AccountScreen}
+        component={AccountStackScreen}
         options={{
+          headerShown: false,
+
           tabBarLabel: "Account",
           tabBarLabelStyle: { fontSize: 12 },
           tabBarIcon: ({ color, size, focused }) => (
@@ -129,6 +131,21 @@ const Tabs = () => {
   );
 };
 
+function AccountStackScreen({ navigation, route }) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="AccountScreen"
+        component={AccountScreen}
+        options={{
+          headerShown: true,
+          headerTitle: "My Account",
+          headerBackVisible: true,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 function GroceryStackScreen({ navigation, route }) {
   return (
     <Stack.Navigator>
